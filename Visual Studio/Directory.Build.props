@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project>
+  <!-- This file will be automatically included in all projects because of its name -->
+  <PropertyGroup>
+    <NoWarn>CS8600,CS8601,CS8602,CS8603,CS8604,CS8625,CS8618,CS8622,CS8629</NoWarn>
+  </PropertyGroup>
+</Project>

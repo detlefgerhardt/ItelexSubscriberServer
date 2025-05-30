@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <SourceRevisionId>build$([System.DateTime]::UtcNow.ToString("yyyyMMddHHmmss"))</SourceRevisionId>
+    <AssemblyVersion>1.0.2</AssemblyVersion>
+    <FileVersion>1.0.2</FileVersion>
+    <Authors>Detlef Gerhardt</Authors>
+    <Title>i-Telex Teilnehmer Server</Title>
+    <Copyright>(c) 2024-2025 / MIT License</Copyright>
+    <ApplicationIcon>TlnServer.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="web\**" />
+    <EmbeddedResource Remove="web\**" />
+    <None Remove="web\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\TlnServerDatabase.cs" />
+    <Compile Remove="Worker.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="TlnServer.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Costura.Fody" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Fody" Version="6.9.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Hosting.Systemd" Version="9.0.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ServerCommon\ServerCommon.csproj" />
+  </ItemGroup>
+
+</Project>
